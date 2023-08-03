@@ -1,5 +1,10 @@
-export function Greet() {
+type GreetProps = {
+  name?: string
+}
+
+export function Greet(props: GreetProps) {
+
   return (
-    <div>Hello</div>
+    <div>Hello {props.name}</div>
   )
 }
