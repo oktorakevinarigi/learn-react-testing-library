@@ -16,6 +16,11 @@ describe("Application", () => {
     const nameElement = screen.getByRole('textbox', {name: "Name"})
     expect(nameElement).toBeInTheDocument()
 
+    // Mendapatkan element dengan text Name dan menambahkan selector input untuk 
+    // mendapatkan element yg lebih spesifik jika ada text yg lain sama namanya
+    const nameElement2 = screen.getByLabelText("Name", {selector: 'input'}) 
+    expect(nameElement2).toBeInTheDocument()
+
     const bioElement = screen.getByRole('textbox', {name: "Bio"})
     expect(bioElement).toBeInTheDocument()
 
@@ -24,6 +29,9 @@ describe("Application", () => {
 
     const termElement = screen.getByRole('checkbox')
     expect(termElement).toBeInTheDocument()
+
+    const termElement2 = screen.getByLabelText('I agree to the term and conditions')
+    expect(termElement2).toBeInTheDocument()
 
     const submitButtonElement = screen.getByRole('button')
     expect(submitButtonElement).toBeInTheDocument()
