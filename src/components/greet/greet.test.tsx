@@ -13,3 +13,11 @@ test("Greet renders with a name", () => {
   const testElement = screen.getByText('Hello Vishwas')
   expect(testElement).toBeInTheDocument()
 })
+
+/* Contoh jika hanya ingin menjalankan test berikut dan test lain dalam file ini aka di skip */
+// test.only("Greet renders correctly", () => {
+// })
+
+/* Contoh jika ingin skip test dan yang lain dijalankan didalam file ini */
+// test.skip("Greet renders with a name", () => {
+// })
