@@ -33,4 +33,16 @@ describe("Skills", () => {
     const startLearningButton = screen.queryByRole("button", {name: "Start learning"})
     expect(startLearningButton).not.toBeInTheDocument()
   })
+
+  test("Start learning button is eventualy displayed", async () => {
+    render(<Sklills skills={sklills} />)
+
+    // Mencari element dengan kemungkinan munculan async
+    // dapat menggunakan find, default timeout 500 jika tidak di set
+    const startLearningButton = await screen.findByRole("button", 
+      {name: "Start learning"}, 
+      {timeout: 2000}
+    )
+    expect(startLearningButton).toBeInTheDocument()
+  })
 })
