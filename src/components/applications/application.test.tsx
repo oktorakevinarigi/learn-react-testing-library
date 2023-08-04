@@ -13,6 +13,10 @@ describe("Application", () => {
     const sectionHeading = screen.getByRole("heading", {level: 2})
     expect(sectionHeading).toBeInTheDocument()
 
+    // Mendapatkan element dengan text All fields are mandatory baik dalam pararaf atau div
+    const paragraphElement = screen.getByText("All fields are mandatory")
+    expect(paragraphElement).toBeInTheDocument()
+
     const nameElement = screen.getByRole('textbox', {name: "Name"})
     expect(nameElement).toBeInTheDocument()
 
