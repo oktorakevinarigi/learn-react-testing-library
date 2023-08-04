@@ -1,10 +1,10 @@
-import {Application} from './components/applications/application'
+import {Counter} from './components/counter/counter'
 import './App.css'
 
 
 function App() {
   return (
-    <Application />
+    <Counter />
   )
 }
 
