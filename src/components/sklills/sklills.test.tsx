@@ -1,0 +1,21 @@
+import {render, screen} from '@testing-library/react';
+import {Sklills} from './sklills'
+
+describe("Skills", () => {
+  const sklills = ["HTML", "CSS", "JavaScript"];
+
+  test("renders correctly", () => {
+    render(<Sklills skills={sklills} />)
+    const listElement = screen.getByRole("list")
+    expect(listElement).toBeInTheDocument()
+  })
+
+  test("renders a list of skills", () => {
+    render(<Sklills skills={sklills} />)
+
+    // Mencari berapa banyak element di DOM
+    // Mengembalikan array element node
+    const listItemElement = screen.getAllByRole("listitem")
+    expect(listItemElement).toHaveLength(sklills.length)
+  })
+})
