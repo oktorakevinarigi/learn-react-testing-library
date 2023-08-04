@@ -26,6 +26,10 @@ describe("Application", () => {
     const imageElement = screen.getByAltText("a person with a laptop")
     expect(imageElement).toBeInTheDocument()
 
+    // Mendapatkan element dengan attribut yang memiliki data-testid
+    const customElement = screen.getByTestId("custom-element")  
+    expect(customElement).toBeInTheDocument()
+
     const nameElement = screen.getByRole('textbox', {name: "Name"})
     expect(nameElement).toBeInTheDocument()
 
