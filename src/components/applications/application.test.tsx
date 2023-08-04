@@ -30,6 +30,10 @@ describe("Application", () => {
     const nameElement3 = screen.getByPlaceholderText("Fullname")
     expect(nameElement3).toBeInTheDocument()
 
+    // Mencari value dari tag input menggunakan getByDisplayValue
+    const nameElement4 = screen.getByDisplayValue("Vishwas")
+    expect(nameElement4).toBeInTheDocument()
+
     const bioElement = screen.getByRole('textbox', {name: "Bio"})
     expect(bioElement).toBeInTheDocument()
 
