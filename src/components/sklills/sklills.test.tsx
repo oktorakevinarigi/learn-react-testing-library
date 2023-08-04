@@ -18,4 +18,19 @@ describe("Skills", () => {
     const listItemElement = screen.getAllByRole("listitem")
     expect(listItemElement).toHaveLength(sklills.length)
   })
+
+  test("renders Login button", () => {
+    render(<Sklills skills={sklills} />)
+
+    const loginButton = screen.getByRole("button", {name: "Login"})
+    expect(loginButton).toBeInTheDocument()
+  })
+
+  test("Start Learning button is not rendered", () => {
+    render(<Sklills skills={sklills} />)
+
+    // Mencari element yang tidak di render pada DOM
+    const startLearningButton = screen.queryByRole("button", {name: "Start learning"})
+    expect(startLearningButton).not.toBeInTheDocument()
+  })
 })
