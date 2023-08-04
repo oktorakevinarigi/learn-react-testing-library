@@ -17,6 +17,10 @@ describe("Application", () => {
     const paragraphElement = screen.getByText("All fields are mandatory")
     expect(paragraphElement).toBeInTheDocument()
 
+    // Mendapatkan element dengan attribut yang memiliki title
+    const closeElement = screen.getByTitle("close")
+    expect(closeElement).toBeInTheDocument()
+
     // Mendapatkan element dengan attribut yang memiliki alt
     // seperti image, input, dll
     const imageElement = screen.getByAltText("a person with a laptop")
